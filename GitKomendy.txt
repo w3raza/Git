@@ -1,0 +1,47 @@
+git commit -m "opis commitu"//zawiera wszystkie pliki projektu.
+
+git checkout "nazwa commita" //poruszanie się po commitach 
+git branch "nazwa gałęzi" //tworzy nową gałąź
+git checkout -b "nazwa-gałęzi" //stworzyć nową gałąź ORAZ przełączyć się na nią w tym samym czasie
+
+git merge //łączenie gałęzi
+git rebase //łączenie gałęzi, liniowa sekwencja commitów
+git rebase -i //otworzy okno, aby pokazać ci, które commity mają być skopiowane poniżej wskazanego celu
+pick off //oznacza, że nie chcesz uwzględnić tego commitu.
+
+git reflog //listę wszystkich rzeczy, które zrobiłeś w gicie, we wszystkich branchach
+git diff //pokazuje zamiany między commitami
+git log //pokazuje hasz commitów 
+git reset HEAD@{index} //indeks przed tym jak wszytsko się zepsuło
+
+git reset 
+git reset HEAD~{ile wstecz} --hard
+-- soft //zachowuje osatnie zmiany
+git revert //W celu odwrócenia zmian i podzielenia się tymi odwróconymi zmianami z innymi
+
+git add . // dokonaj zmiany lub dodaj pojedyncze pliki
+git commit --amend --no-edit //ostatni commit zawiera tę zmianę
+git commit --amend //zmiana opisu
+
+Nigdy nie poprawiaj commitów, które zostały wypushowane do publicznego/współdzielonego brancha! Poprawiaj tylko te commity, które istnieją jedynie w Twojej kopii lokalnej
+
+bezpośrednio przypisać gałąź do commita za pomocą opcji -f
+git branch -f main HEAD~3 //przenosi (na siłę) gałąź main trzy commity wstecz za HEADa.
+
+Poruszanie
+HEAD wskazuje na nazwę gałęzi
+~"ilość commitów do przeskoczenie"
+^ //Poruszanie się wstecz o jeden commit
+git checkout HEAD~; git checkout HEAD^2; git checkout HEAD~2 == git checkout HEAD~^2~2
+
+git cherry-pick <Commit1> <Commit2> <...> //jakie commity chcesz dodać do aktualnego HEADa
+
+git tag "nazwa tagu" "do jakiego commita" //trwale oznaczają pewne commity, nigdy się nie przesuwają
+git describe <ref> //Opisuje aktualne położenie
+*Jeśli nie podasz <ref>, git użyje miejsca, w którym jesteś teraz zcheckoutowany (HEAD)
+ODP: <tag>_<numCommits>_g<hash>
+-tag jest najbliższym tagiem przodka w historii,
+-numCommits jest liczbą commitów od tego tagu,
+-<hash> jest hashem opisywanego commitu.
+
+git clone //tworzenia lokalnych kopii zdalnych repozytoriów

@@ -1,0 +1,19 @@
+git rm lab00.java //usuwa
+git commit -m 'Finished'
+git push origin master
+ 
+git init
+git remote add origin git@github.com:w3raza/C.git
+git pull origin master --rebase
+git push origin master
+git add lab00
+git commit -m 'Finished'
+git push origin master
+
+git config --global user.email weraza@vp.pl    
+git config --global user.name w3raza
+
+git status
+
+sudo apt-get update
+sudo apt install default-jdk
