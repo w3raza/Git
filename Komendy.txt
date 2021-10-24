@@ -1,4 +1,4 @@
-git rm lab00.java //usuwa
+git -r rm lab00.java //usuwa
 git commit -m 'Finished'
 git push origin master
  
